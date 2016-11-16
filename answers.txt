@@ -1,0 +1,64 @@
+CS 2200 Summer 2014
+Project 4
+Name:	Jae Min Baek
+GT Number:
+
+
+
+Problem 1B
+----------
+./os-sim {1,2,4}
+1 CPU : 67.6 seconds
+2 CPU : 35.8 seconds
+4 CPU : 33.4 seconds
+
+The more CPU I'm using, the shorter seconds for the total execution. Multi-CPU makes more jobs than single CPU and eventually reduce the execution time. Therefore it's inverse-linear relationship between execution time and the number of CPU.
+
+Problem 2B
+----------
+./os-sim 1 -r {8,6,4,2}
+
+800 ms
+# of Context Switches: 136
+Total execution time: 67.6 s
+Total time spent in READY state: 325.4 s
+
+600 ms
+# of Context Switches: 161
+Total execution time: 67.6 s
+Total time spent in READY state: 314.5 s
+
+400 ms
+# of Context Switches: 203
+Total execution time: 67.6 s
+Total time spent in READY state: 298.8 s
+
+200 ms
+# of Context Switches: 362
+Total execution time: 67.5 s
+Total time spent in READY state: 283.2 s
+
+Time quantum gets smaller and it cause the context switching to increase(frequent). If the time quantum gets TOO smaller, context switching increase A LOT and it causes overhead which is the cons for round robin algorithm.
+
+
+Problem 3B
+----------
+os-sim 1
+# of Context Switches: 99
+Total execution time: 67.6 s
+Total time spent in READY state: 389.9 s
+
+os-sim 1 -r 6
+# of Context Switches: 161
+Total execution time: 67.6 s
+Total time spent in READY state: 314.5 s
+
+os-sim 1 -p
+# of Context Switches: 168
+Total execution time: 68.8 s
+Total time spent in READY state: 137.1 s
+
+
+Static Priority Algorithm spends the less READY time than any other algorithms (see above). The reason that Static Priority Algorithm is closer to SJF is that SJF can be seen as static priority algorithm with shortest job first priority level. 
+
+
